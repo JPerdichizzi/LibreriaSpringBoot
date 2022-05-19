@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<header> 
+    <a href="/logout"> Desconectar Administrador</a><br>
+     <a href="/inicio"> Volver al menú principal</a>
+</header>
+<body>
+    <div>
+        <h2 class="">Modificar Cliente</h2>
+            <form action="/modificarCliente" method="POST" enctype="multipart/form-data">
+                
+               
+                
+              
+              
+
+              <label>Documento del cliente a modificar </label>
+              <input type="number" class="" name="documento" th:value="${documento}"/>
+
+              <h2> Ingrese el nuevo dato del cliente que desea modificar </h2>
+              <label>Nombre </label>
+              <input type="text" class="" name="nombre" th:value="${nombre}"/>
+
+              <label>Apellido </label>
+              <input type="text" class="" name="apellido" th:value="${apellido}"/>
+              
+              <label>Teléfono </label>
+              <input type="text" class="" name="telefono" th:value="${telefono}"/>
+                     
+                      
+              
+              
+              
+              
+              <br/><button type="submit" class="">Modificar</button>
+            </form>
+    </div>

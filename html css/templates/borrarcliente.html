@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<header> 
+    <a href="/logout"> Desconectar Administrador</a>
+</header>
+<body>
+    <div>
+        <h2 class="">Borrar Cliente</h2>
+            <form action="borrarCliente" method="POST" enctype="multipart/form-data">
+                
+                <p th:if="${error != null}" th:text="${Error}" style="color:red";></p>
+                
+              
+              
+
+              <label>Documento </label>
+              <input type="number" class="" name="documento" th:value="${documento}"/>
+
+                     
+                      
+              
+              
+              
+              
+              <br/><button type="submit" class="">Cargar</button>
+            </form>
+    </div>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <h2 class="">Registro Administrador</h2>
+        
+        <p th:if="${error != null}" th:text="${error}" style="color:red"></p>
+        
+            <form action="/registrarAdmin" method="POST" enctype="multipart/form-data">
+                
+                <p th:if="${error != null}" th:text="${Error}" style="color:red";></p>
+                
+              <label>Nombre</label>
+              <input type="text" class="" name="nombre" th:value="${nombre}"/>
+
+              <label>Apellido</label>
+              <input type="text" class="" name="apellido" th:value="${apellido}"/>
+              
+              <label>E-Mail</label>
+              <input type="email" class="" name="mail" th:value="${mail}"/>
+                     
+                       
+              
+              <label>Clave</label>
+              <input type="password" class="" name="clave1" th:value="${clave1}"/>
+              
+              <label>Repetir Clave</label>
+              <input type="password" class="" name="clave2" th:value="${clave2}"/>
+              
+              <br/><button type="submit" class="">Registrar</button>
+            </form>
+    </div>
+</body>
+</html>

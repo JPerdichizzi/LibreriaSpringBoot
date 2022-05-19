@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<header> 
+    <a href="/logout"> Desconectar Administrador </a>
+    <br>
+     <a href="/inicio"> Volver al menú principal</a>
+</header>
+<body>
+    <div>
+        <h2 class="">Devolución préstamo</h2>
+            <form action="/clienteElegir" method="GET" enctype="multipart/form-data">
+                
+                <p th:if="${error != null}" th:text="${error}" style="color:red";></p>
+                
+              <label>Seleccione al cliente que devuelve el libro</label>
+                <select class="" name="cliente"> 
+                  <option th:each="cliente : ${clientes}" th:value="${cliente.id}" th:text="${cliente.nombre} + ' ' + ${cliente.apellido}"></option> 
+                  </select>   
+              
+              <br/><button type="submit" class="">Elegir cliente</button>
+               </form>
+
+              
+                     
+                
+            <form action="/devolucion" method="POST" enctype="multipart/form-data">
+               
+                
+                <label> Seleccione al libro que se devuelve</label>
+               
+                     <input th:if="${prestamosOk}!=null" type="hidden" class="" name="cliente" th:value="${cliente.id}">
+                      <select class="" name="prestamoOk"> 
+                  <option th:if="${prestamosOk}!=null" th:each="prestamoOk : ${prestamosOk}" th:value="${prestamoOk.id}" th:text="${prestamoOk.libro.titulo}"></option> 
+                  </select>
+               <br/><button type="submit" class="">Devolver</button>
+               </form>
+        
+       
+    </div>
+</body>
+</html>

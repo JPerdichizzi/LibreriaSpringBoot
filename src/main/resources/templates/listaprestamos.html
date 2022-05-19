@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<header> 
+    <a href="/logout"> Desconectar Administrador </a>
+    <br>
+     <a href="/inicio"> Volver al menú principal</a>
+</header>
+<body>
+    <div>
+        <h2 class="" action="/listaPrestamos" method="GET">Lista de préstamos</h2>     
+                
+                
+              
+               <p th:if="${error != null}" th:text="${error}" style="color:red";></p>
+
+              <ul> 
+
+                <li th:each="prestamo : ${prestamos}" th:text="'Libro prestado: ' + ${prestamo.libro.titulo} + ' ' + 'Nombre y apellido del cliente prestatario: ' + ${prestamo.cliente.nombre} + ' ' + ${prestamo.cliente.apellido}"}> </li>
+              </ul>
+              
+                 <a href="/prestamos"> Volver </a>
+            </form>
+    </div>
+</body>
+</html>

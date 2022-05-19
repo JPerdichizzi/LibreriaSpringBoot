@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<header> 
+    <a href="/logout"> Desconectar Administrador </a>
+    <br>
+     <a href="/inicio"> Volver al menú principal</a>
+</header>
+<body>
+    <div>
+        <h2 class="">Cargar préstamo</h2>
+            <form action="cargarPrestamo" method="POST" enctype="multipart/form-data">
+                
+                <p th:if="${error != null}" th:text="${error}" style="color:red";></p>
+                
+              
+              
+
+              <label>Libro que se prestará</label>
+              <select class="" name="libro"> 
+                <option th:each=libro : ${libros}" th:value="${libro.id}" th:text="${libro.nombre}"></option> 
+                </select>
+                     
+                <label>Cliente</label>
+                <select class="" name="cliente"> 
+                  <option th:each="cliente : ${clientes}" th:value="${cliente.id}" th:text="${cliente.nombre}"></option> 
+                  </select>        
+              
+              
+              
+              
+              <br/><button type="submit" class="">Prestar</button>
+            </form>
+    </div>
+</body>
+</html>

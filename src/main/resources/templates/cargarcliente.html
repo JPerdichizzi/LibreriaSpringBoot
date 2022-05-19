@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<header> 
+    <a href="/logout"> Desconectar Administrador</a><br>
+     <a href="/inicio"> Volver al menú principal</a>
+</header>
+<body>
+    <div>
+        <h2 class="">Cargar Cliente</h2>
+            <form action="/cargarCliente" method="POST" enctype="multipart/form-data">
+                
+                <p th:if="${error != null}" th:text="${error}" style="color:red";></p>
+                
+              
+              <label>Nombre </label>
+              <input type="text" class="" name="nombre" th:value="${nombre}"/>
+
+              <label>Apellido </label>
+              <input type="text" class="" name="apellido" th:value="${apellido}"/>
+
+              <label>Documento </label>
+              <input type="number" class="" name="documento" value="0" th:value="${documento}"/>
+
+              <label>Teléfono </label>
+              <input type="text" class="" name="telefono" th:value="${telefono}"/>
+                     
+                      
+              
+              
+              
+              
+              <br/><button type="submit" class="">Cargar</button>
+            </form>
+    </div>
+    
+    
+</body>
+</html>
+              
+              
+              
+        
+</body>
+</html>
